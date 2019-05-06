@@ -3,10 +3,10 @@
     "name": "portfolio",
     "version": "5.0.5",
     "scripts": {
-       "start": "gatsby develop",
-    "build": "rm -rf ./docs; gatsby build --prefix-links; mv ./public ./docs;",
-    "build-css": "cd semantic/; gulp build; cd ../;",
-    "watch-css": "cd semantic/; gulp watch; cd ../;"
+        "start": "gatsby develop",
+        "build": "rm -rf ./docs; gatsby build --prefix-links; mv ./public ./docs;",
+        "build-css": "cd semantic/; gulp build; cd ../;",
+        "watch-css": "cd semantic/; gulp watch; cd ../;"
     },
     "description": "Resume is a simple, yet elegant resume and CV theme for Bootstrap 4.",
     "keywords": [
