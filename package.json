@@ -1,12 +1,9 @@
 {
     "title": "Resume",
-    "name": "portfolio",
+    "name": "startbootstrap-resume",
     "version": "5.0.5",
     "scripts": {
-        "start": "gatsby develop",
-        "build": "rm -rf ./docs; gatsby build --prefix-links; mv ./public ./docs;",
-        "build-css": "cd semantic/; gulp build; cd ../;",
-        "watch-css": "cd semantic/; gulp watch; cd ../;"
+        "start": "gulp watch"
     },
     "description": "Resume is a simple, yet elegant resume and CV theme for Bootstrap 4.",
     "keywords": [
@@ -29,12 +26,11 @@
     ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/RutviShah2008/portfolio.git"
+        "url": "https://github.com/BlackrockDigital/startbootstrap-resume.git"
     },
     "dependencies": {
         "@fortawesome/fontawesome-free": "5.8.1",
         "bootstrap": "4.3.1",
-        "gatsby": "^2.4.2",
         "jquery": "3.3.1",
         "jquery.easing": "^1.4.1"
     },
