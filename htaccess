@@ -29,6 +29,8 @@ RewriteOptions inherit
     
 </IfModule>
 
+RewriteCond %{HTTP_HOST} ^shahrutvi.com/cgi-sys/defaultwebpage.cgi [NC]
+RewriteRule ^(.*)$ https://www.shahrutvi.com/$1 [L,R=301]
 RewriteCond %{HTTP_REFERER} !^http://shahrutvi.com/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^http://shahrutvi.com      [NC]
 RewriteCond %{HTTP_REFERER} !^http://www.shahrutvi.com/.*$      [NC]
@@ -41,6 +43,4 @@ RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
 RewriteCond %{HTTP_HOST} ^shahrutvi\.gajjarnehal\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.shahrutvi\.gajjarnehal\.com$
 RewriteRule ^/?$ "https\:\/\/www\.shahrutvi\.com" [R=301,L]
-RewriteCond %{HTTP_HOST} ^shahrutvi.com/cgi-sys/defaultwebpage.cgi [NC]
-RewriteRule ^(.*)$ https://www.shahrutvi.com/$1 [L,R=301]
 
