@@ -42,5 +42,5 @@ RewriteCond %{HTTP_HOST} ^shahrutvi\.gajjarnehal\.com$ [OR]
 RewriteCond %{HTTP_HOST} ^www\.shahrutvi\.gajjarnehal\.com$
 RewriteRule ^/?$ "https\:\/\/www\.shahrutvi\.com" [R=301,L]
 RewriteCond %{HTTP_HOST} ^shahrutvi.com/cgi-sys/defaultwebpage.cgi [NC]
-RewriteRule ^(.*)$ http://www.shahrutvi.com/$1 [L,R=301]
+RewriteRule ^(.*)$ https://www.shahrutvi.com/$1 [L,R=301]
 
