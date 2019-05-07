@@ -29,7 +29,8 @@ RewriteOptions inherit
     
 </IfModule>
 
-RewriteCond %{HTTP_HOST} ^shahrutvi.com/cgi-sys/defaultwebpage.cgi [NC]
+RewriteCond %{HTTP_HOST} ^shahrutvi.com/cgi-sys/defaultwebpage.cgi [OR]
+RewriteCond %{HTTP_HOST} ^shahrutvi.com [NC]
 RewriteRule ^(.*)$ https://www.shahrutvi.com/$1 [L,R=301]
 RewriteCond %{HTTP_REFERER} !^http://shahrutvi.com/.*$      [NC]
 RewriteCond %{HTTP_REFERER} !^http://shahrutvi.com      [NC]
