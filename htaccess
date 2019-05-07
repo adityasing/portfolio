@@ -1,0 +1,46 @@
+RewriteOptions inherit 
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+    
+    DirectoryIndex index.html index.htm
+    
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.html [L]
+    
+    #HTTP To HTTPS
+    RewriteCond %{SERVER_PORT} 80
+    RewriteCond %{HTTP_HOST} ^(www\.)?shahrutvi\.com
+    RewriteRule ^(.*)$ https://www.shahrutvi.com/$1 [R,L]
+    
+</IfModule>
+
+RewriteCond %{HTTP_REFERER} !^http://shahrutvi.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://shahrutvi.com      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.shahrutvi.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^http://www.shahrutvi.com      [NC]
+RewriteCond %{HTTP_REFERER} !^https://shahrutvi.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://shahrutvi.com      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.shahrutvi.com/.*$      [NC]
+RewriteCond %{HTTP_REFERER} !^https://www.shahrutvi.com      [NC]
+RewriteRule .*\.(jpg|jpeg|gif|png|bmp)$ - [F,NC]
+RewriteCond %{HTTP_HOST} ^shahrutvi\.gajjarnehal\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.shahrutvi\.gajjarnehal\.com$
+RewriteRule ^/?$ "https\:\/\/www\.shahrutvi\.com" [R=301,L]
+RewriteCond %{HTTP_HOST} ^shahrutvi.com/cgi-sys/defaultwebpage.cgi [NC]
+RewriteRule ^(.*)$ http://www.shahrutvi.com/$1 [L,R=301]
+
